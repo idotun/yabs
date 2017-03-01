@@ -57,6 +57,11 @@ header .navbar-default, .post-item, .widget, footer, .post-author, .post-comment
 
 /*    width:300px;*/
 }
+#post-item-body{
+    height:58px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
 
 .post-item-body, .post-author, .post-comments {
     border: 1px solid #e7e7e7;
@@ -73,13 +78,10 @@ header .navbar-default, .post-item, .widget, footer, .post-author, .post-comment
     letter-spacing: -1px;
 }
 
-.post-item-body h4 {
-    font-weight: bold;
-}
-
 .padding-10 {
     padding: 10px;
 }
+
 
 .post-item-body .post-meta {
     border-top: 1px solid #e7e7e7;
@@ -340,4 +342,15 @@ ul.social-icons li {
 
 span.required {
     color: red;
+}
+.btn-facebook {
+	color: #fff;
+	background-color: #4C67A1;
+}
+.btn-facebook:hover {
+	color: #fff;
+	background-color: #405D9B;
+}
+.btn-facebook:focus {
+	color: #fff;
 }

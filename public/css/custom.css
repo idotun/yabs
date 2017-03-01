@@ -33,6 +33,7 @@ header .navbar-default, .post-item, .widget, footer, .post-author, .post-comment
 .post-item {
     margin-bottom: 40px;
     color: #525252;
+    border-width: thick;
 }
 
 .post-item p {

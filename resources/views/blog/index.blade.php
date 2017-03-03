@@ -8,13 +8,13 @@
                 <article class="post-item">
                    
                     <div class="post-item-image">
-                        <a href="post.html">
+                        <a href="{{ route('blog.post', $post->id) }}">
                             <img src="img/{{ $post->thumbnail }}" alt="">
                         </a>
                     </div>
                     <div class="post-item-body" id="post-item-body">
                         <div class="padding-10">
-                           <p><b><a href="post.html">{{ $post->body }}</a></b></p>
+                           <p><b><a href="{{ route('blog.post', $post->id) }}">{{ $post->body }}</a></b></p>
                            
                         </div>
                     </div>
@@ -24,12 +24,15 @@
             </div>
             @endforeach
            
-<!--
-                <nav>
-                   
-                </nav>
--->
+                
            
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                   {{$posts -> links()}}
+                </nav>
+            </div>
         </div>
  </div>
     @endsection

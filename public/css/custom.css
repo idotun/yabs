@@ -64,6 +64,16 @@ header .navbar-default, .post-item, .widget, footer, .post-author, .post-comment
     text-overflow: ellipsis;
 }
 
+.post-detail p{
+        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+}
+
 .post-item-body, .post-author, .post-comments {
     border: 1px solid #e7e7e7;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);

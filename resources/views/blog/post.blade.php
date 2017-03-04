@@ -9,7 +9,7 @@
 
                     <div class="post-item-body">
                         <div class="padding-10">
-                            <p >{{$post->body}}</p>
+                            {!! $post->body_html !!}
                             
                         </div>
                     </div>

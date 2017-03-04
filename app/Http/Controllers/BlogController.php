@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class BlogController extends Controller
 {

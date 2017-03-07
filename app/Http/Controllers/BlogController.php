@@ -16,7 +16,13 @@ class BlogController extends Controller
     }
     
     public function post($id){
+        $popularPosts = Post::orderBy('view_count', 'desc')->take(10)->get();
+        
         $post = Post::findorfail($id);
-        return view("blog.post", compact('post'));
+        
+        return view("blog.post", compact('post', 'popularPosts'));
+       
     }
+    
+   
 }

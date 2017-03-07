@@ -89,6 +89,19 @@ header .navbar-default, .post-item, .widget, footer, .post-author, .post-comment
     letter-spacing: -1px;
 }
 
+.popularPosts{
+    height: 97px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.popularPosts h6{
+    font-weight: 600;
+    
+    color: #888;
+} 
+
 .padding-10 {
     padding: 10px;
 }
@@ -284,7 +297,7 @@ ul.popular-posts li span, .post-author-count a {
 .popular-posts .post-body h6 {
     font-size: 16px;
     /*font-weight: bold;*/
-    color: #999;
+    color: #888;
 }
 
 .popular-posts .post-image img {

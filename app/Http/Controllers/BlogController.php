@@ -20,7 +20,13 @@ class BlogController extends Controller
         
         $post = Post::findorfail($id);
         
+        //update posts set view_count = view_count + 1 where id = 
+        
+        $post->increment('view_count');
+        
         return view("blog.post", compact('post', 'popularPosts'));
+        
+        
        
     }
     

@@ -399,3 +399,9 @@ span.required {
 .btn-facebook:focus {
 	color: #fff;
 }
+.facebook-share{
+    float: left;
+}
+.twitter-share{
+    float: right;
+}

@@ -115,7 +115,7 @@ header .navbar-default, .post-item, .widget, footer, .post-author, .post-comment
 }
 
 .popularPosts h6{
-    font-weight: 600;
+    font-weight: normal;
     
     color: #888;
 } 
@@ -263,6 +263,7 @@ li.comment-item:first-child {
     font-weight: 600;
 }
 
+
 ul.categories, ul.popular-posts, ul.tags {
     list-style: none;
     padding: 20px;
@@ -283,8 +284,8 @@ ul.categories li:last-child {
 
 ul.popular-posts li {
     display: block;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
 }
 
 ul.popular-posts li:last-child {

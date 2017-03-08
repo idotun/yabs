@@ -26,9 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    
 }
+//public function boot()
+//{
+//    Schema::defaultStringLength(191);
+//}
 
-public function boot()
-{
-    Schema::defaultStringLength(191);
-}
+

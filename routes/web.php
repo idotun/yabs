@@ -19,3 +19,7 @@ Route::get('/post/{post}', [
     'uses' => 'BlogController@post',
     'as' => 'blog.post'
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

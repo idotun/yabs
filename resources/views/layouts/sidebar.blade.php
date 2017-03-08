@@ -29,10 +29,12 @@
                         <div class="widget-heading">
                             <h4>Popular Yabs</h4>
                         </div>
-
+                        
                         <div class="widget-body">
+                        
                             <ul class="popular-posts">
-                            @foreach ($popularPosts as $post)
+<!--                              display popular posts-->
+                               @foreach ($popularPosts as $post)
                             <li>
                             <div class="popularPosts">
                                 <div class="post-image">
@@ -46,10 +48,11 @@
                                 </div>
                             </div>
                             </li>
-                            @endforeach
+                                 @endforeach
                             </ul>
-                          
+                            
                         </div>
+                      
                     </div>
 
 <!--

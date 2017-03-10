@@ -22,4 +22,4 @@ Route::get('/post/{post}', [
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'Backend\HomeController@index');

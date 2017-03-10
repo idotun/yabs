@@ -27,11 +27,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+    public function getGravatarAttribute()
+    {
+        $hash = md5(strtolower(trim($this->attributes['email'])));
+        return "http://www.gravatar.com/avatar/$hash";
+    }
+    
     
 }
-//public function boot()
-//{
-//    Schema::defaultStringLength(191);
-//}
+
 
 

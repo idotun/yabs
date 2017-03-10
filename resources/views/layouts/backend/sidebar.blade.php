@@ -3,11 +3,12 @@
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel">
+       <?php $currentUser = Auth::user() ?>
         <div class="pull-left image">
-          <img src="/backend/img/dot.jpg" class="img-circle" alt="User Image">
+          <img src="{{Auth::user()->gravatar}}" class="img-circle" alt="{{$currentUser->name}}">
         </div>
         <div class="pull-left info">
-          <p>{{Auth::user()->name}}</p>
+          <p>{{$currentUser->name}}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>

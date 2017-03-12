@@ -25,7 +25,7 @@
                     <p class="lead text-muted">You've signed in as {{Auth::user()->name}}</p>
 
                     <h4>Get started</h4>
-                    <p><a href="#" class="btn btn-primary">Write your first blog post</a> </p>
+                    <p><a href="{{ route('blog.create') }}" class="btn btn-primary">Write your first blog post</a> </p>
               </div>
               <!-- /.box-body -->
             </div>

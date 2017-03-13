@@ -45,7 +45,10 @@
                                </td>
                                <td>{{$post->body}}</td>
                                <td><img height="90px" width="90px" src="/img/{{$post->thumbnail}}"/></td>
-                               <td>{{$post->created_at}}</td>
+                               <td><abbr title="{{ $post->dateFormatted(true)}}"> 
+                                        {{ $post->dateFormatted()}}
+                                   </abbr>
+                               </td>
                             
                            </tr>
                            @endforeach
@@ -57,17 +60,13 @@
               <!-- /.box-body -->
               <div class="box-footer clearfix">
                  <div class="pull-left">
-                  <ul class="pagination no-margin">
-                      <li><a href="#">&laquo;</a></li>
-                      <li><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">&raquo;</a></li>
-                  </ul>
+                  {{$posts -> links()}}
                   </div>
                   <div class="pull-right">
+                    <?php $postCount = $posts->count() ?>
+                    
                      <small>
-                         4 items
+                         {{ $postCount }} {{ str_plural('Item', $postCount) }}
                      </small>
                   </div>
               </div>

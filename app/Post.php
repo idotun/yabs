@@ -10,7 +10,16 @@ class Post extends Model
     //
     
     
-    public function getBodyHtmlAttribute($value){
+    public function getBodyHtmlAttribute($value)
+    {
         return Markdown::convertToHtml(e($this->body));
     }
+    
+    public function dateFormatted($showTimes = false)
+    {
+        $format = "d/m/Y";
+        if($showTimes) $format = $format . " H:i:s";
+        return $this->created_at->format($format);
+    }
+    
 }

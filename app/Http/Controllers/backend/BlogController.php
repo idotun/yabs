@@ -8,6 +8,7 @@ use App\Post;
 
 class BlogController extends BackendController
 {
+    protected $limit = 10;
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +16,7 @@ class BlogController extends BackendController
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->paginate($this->limit);
         return view("backend.blog.index", compact('posts'));
     }
 

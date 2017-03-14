@@ -20,8 +20,18 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
+                <div class="box-header">
+                 <div class="pull-left">
+                    <a href="{{ route('blog.create') }}" class="btn btn-success">Add New</a>
+                 </div>
+                </div>
               <!-- /.box-header -->
               <div class="box-body ">
+                  @if (!$posts->count())
+                   <div class="alert alert-danger">
+                       <strong>No record found</strong>
+                   </div>
+                   @else
                     <table class="table table-bordered">
                        <thead>
                            <tr>
@@ -55,6 +65,7 @@
                        </tbody>
                         
                     </table>
+                    @endif
                     
               </div>
               <!-- /.box-body -->
@@ -63,7 +74,7 @@
                   {{$posts -> links()}}
                   </div>
                   <div class="pull-right">
-                    <?php $postCount = $posts->count() ?>
+                    
                     
                      <small>
                          {{ $postCount }} {{ str_plural('Item', $postCount) }}
@@ -78,4 +89,10 @@
     </section>
     <!-- /.content -->
   </div>
+@endsection
+
+@section('script')
+    <script type="text/javascript">
+        $('ul.pagination').addClass('no-margin pagination-sm');
+    </script>
 @endsection

@@ -17,7 +17,8 @@ class BlogController extends BackendController
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate($this->limit);
-        return view("backend.blog.index", compact('posts'));
+        $postCount = Post::count();
+        return view("backend.blog.index", compact('posts', 'postCount'));
     }
 
     /**

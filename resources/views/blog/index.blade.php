@@ -6,7 +6,14 @@
            @foreach ($posts as $post)
             <div class="col-md-3">
                 <article class="post-item">
-                   
+               @if (! $post->thumbnail)
+                <div class="post-item-body" id="post-item-bodya">
+                        <div class="padding-10">
+                           <p><b><a href="{{ route('blog.post', $post->id) }}">{!! $post->body_html !!}</a></b></p>
+                           
+                        </div>
+                </div>
+                @else
                     <div class="post-item-image">
                         <a href="{{ route('blog.post', $post->id) }}">
                             <img src="img/{{ $post->thumbnail }}" alt="">
@@ -19,7 +26,7 @@
                         </div>
                     </div>
                     
-                    
+                @endif  
                 </article>
             </div>
             @endforeach

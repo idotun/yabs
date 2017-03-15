@@ -68,6 +68,12 @@ header .navbar-default, .post-item, .widget, footer, .post-author, .post-comment
     text-overflow: ellipsis;
 }
 
+#post-item-bodya{
+    height:271px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
 .post-detail p{
         font-size: 32px;
         margin-top: 20px;

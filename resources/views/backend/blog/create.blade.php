@@ -21,16 +21,22 @@
           <div class="col-xs-12">
             <div class="box">
               <!-- /.box-header -->
-              <div class="box-body ">
+              <div class="box-body">
                     {!! Form::model($post, [
                         'method' => 'POST',
                         'route' => 'blog.store'
                     ])!!}
                     
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}" >
                         {!! Form::label('body') !!}
                         {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
                     </div>
+                    
+                    @if($errors->has('body'))
+                        <span class="help-block">
+                            {{ $errors->first('body') }}
+                        </span>
+                    @endif
                     
                     <hr>
                     

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
+use Illuminate\Support\Facades\Input;
 
 class BlogController extends BackendController
 {
@@ -40,7 +41,13 @@ class BlogController extends BackendController
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, ['body' => 'required']);
+        
+        $post = new Post;
+        $post->body = Input::get('body');
+        $post->save();
+
+        return redirect('/backend/blog')->with('message', 'Your post was successfully created!');
     }
 
     /**

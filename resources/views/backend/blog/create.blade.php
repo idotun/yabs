@@ -24,10 +24,11 @@
               <div class="box-body">
                     {!! Form::model($post, [
                         'method' => 'POST',
-                        'route' => 'blog.store'
+                        'route' => 'blog.store',
+                        'files' => TRUE
                     ])!!}
                     
-                    <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}" >
+                    <div class="form-group {{ $errors->has('body') ? 'has-error' : ''}}" >
                         {!! Form::label('body') !!}
                         {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
                     </div>
@@ -35,6 +36,16 @@
                     @if($errors->has('body'))
                         <span class="help-block">
                             {{ $errors->first('body') }}
+                        </span>
+                    @endif
+                    <div class="form-group {{ $errors->has('image') ? 'has-error' : ''}}" >
+                        {!! Form::label('image') !!}
+                        {!! Form::file('image', null, ['class' => 'form-control']) !!}
+                    </div>
+                    
+                    @if($errors->has('image'))
+                        <span class="help-block">
+                            {{ $errors->first('image') }}
                         </span>
                     @endif
                     

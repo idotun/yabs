@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Input;
 class BlogController extends BackendController
 {
     protected $limit = 10;
+    protected $uploadPath;
+    
+    public function __construct()
+    {
+        parent::__construct();
+        $this->uploadPath = public_path('img');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,13 +48,41 @@ class BlogController extends BackendController
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['body' => 'required']);
+        $this->validate($request, ['body' => 'required',
+                                   'image' => 'mimes:jpg,jpeg,bmp,png',
+                                  ]);
+        
+        
+
+        
+        $data = $this->handleRequest($request);
         
         $post = new Post;
-        $post->body = Input::get('body');
+        $post->body = $data['body'];
+        $post->image = $data['image'];
         $post->save();
+        
+
 
         return redirect('/backend/blog')->with('message', 'Your post was successfully created!');
+    }
+    
+    private function handleRequest($request)
+    {
+        $data = $request->all();
+        
+        if ($request->hasFile('image'))
+        {
+            $image = $request->file('image');
+            $fileName = $image->getClientOriginalName();
+            $destination = $this->uploadPath;
+            
+            $image->move($destination, $fileName);
+            
+            $data['image'] = $fileName;
+        }
+        
+        return $data;
     }
 
     /**

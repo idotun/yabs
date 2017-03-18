@@ -8,7 +8,7 @@ use GrahamCampbell\Markdown\Facades\Markdown;
 class Post extends Model
 {
     //
-    protected $fillable = ['body'];
+    protected $fillable = ['body', 'image'];
     
     
     public function getBodyHtmlAttribute($value)

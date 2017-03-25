@@ -37,6 +37,7 @@
                                @foreach ($popularPosts as $post)
                             <li>
                             <div class="popularPosts">
+                               @if($post->thumbnail)
                                 <div class="post-image">
                                         <a href="{{ route('blog.post', $post->id) }}">
                                             <img src="/img/{{ $post->thumbnail }}" />
@@ -46,6 +47,13 @@
                                 <h6><a href="{{ route('blog.post', $post->id) }}"> {{ $post->body }}</a></h6>
                                        
                                 </div>
+                                @else
+                                <div class="post-body" >
+                                <h6><a href="{{ route('blog.post', $post->id) }}"> {{ $post->body }}</a></h6>
+                                       
+                                </div>
+                                @endif
+                                
                             </div>
                             </li>
                                  @endforeach

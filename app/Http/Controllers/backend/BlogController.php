@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
 use Illuminate\Support\Facades\Input;
+use Intervention\Image\Facades\Image;
 
 class BlogController extends BackendController
 {
@@ -60,6 +61,7 @@ class BlogController extends BackendController
         $post = new Post;
         $post->body = $data['body'];
         $post->image = $data['image'];
+        $post->thumbnail = $data['thumbnail'];
         $post->save();
         
 
@@ -77,9 +79,20 @@ class BlogController extends BackendController
             $fileName = $image->getClientOriginalName();
             $destination = $this->uploadPath;
             
-            $image->move($destination, $fileName);
+            $successUploaded = $image->move($destination, $fileName);
+            
+        if($successUploaded)
+        {
+            $extension = $image->getClientOriginalExtension();
+            $thumbnail = str_replace(".{$extension}", "_thumb.{$extension}", $fileName);
+            
+            Image::make($destination . '/' . $fileName)
+                    ->resize(250, 250)
+                    ->save($destination . '/' . $thumbnail);
+        }
             
             $data['image'] = $fileName;
+            $data['thumbnail'] = $thumbnail;
         }
         
         return $data;

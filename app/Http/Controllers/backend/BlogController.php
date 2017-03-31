@@ -60,6 +60,7 @@ class BlogController extends BackendController
         
         $post = new Post;
         $post->body = $data['body'];
+        $post->video = $data['video'];
         $post->image = $data['image'];
         $post->thumbnail = $data['thumbnail'];
         $post->save();

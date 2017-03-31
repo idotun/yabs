@@ -19,9 +19,17 @@
                             
                         </div>
                     </div>
-                     <div class="post-item-image">
+                     <div class="post-item-image" id="post-item-image">
+                            @if($post->video)
+                            
+                            <iframe width="100%" height="315" src="{{$post->video}}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                            
+                            
+                            @else
                 
                             <img src="/img/{{$post->image}}" alt="">
+                            
+                            @endif
                     
                     </div>
                     @endif
@@ -48,3 +56,4 @@
         </div>
     </div>
     @endsection
+   

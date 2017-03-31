@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->text('body');
             $table->text('excerpt');
+            $table->string('video');
             $table->string('image');
             $table->string('thumbnail');
             $table->timestamps('created_at');

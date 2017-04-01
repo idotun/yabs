@@ -22,6 +22,7 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="/backend/plugins/simplemde/simplemde.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="/backend/css/custom.css">
   
   
@@ -58,6 +59,8 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="/backend/js/bootstrap.min.js"></script>
 <script src="/backend/plugins/simplemde/simplemde.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+
 <!-- AdminLTE App -->
 <script src="/backend/js/app.min.js"></script>
 @yield('script')

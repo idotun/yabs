@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
 
-@section('title', 'YABS | Add New Post')
+@section('title', 'YABS | Edit Post')
 
 @section('content')
  <div class="content-wrapper">
@@ -8,7 +8,7 @@
     <section class="content-header">
       <h1>
         Blog
-        <small>Add New Post</small>
+        <small>Edit Post</small>
       </h1>
       <ol class="breadcrumb">
         <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
@@ -19,9 +19,10 @@
     <section class="content">
         <div class="row">
               {!! Form::model($post, [
-                        'method' => 'POST',
-                        'route' => 'blog.store',
-                        'files' => TRUE
+                        'method' => 'PUT',
+                        'route' => ['blog.update', $post->id],
+                        'files' => TRUE,
+                        'id' => 'post-form'
                     ])!!}
              @include('backend.blog.form')
         </div>
